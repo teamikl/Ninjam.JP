@@ -1,0 +1,73 @@
+//output: ../../.uncompressed/what-is-ninjam.html
+extends components/base
+block head
+  - description = "遠隔ジャムセッションツール「NINJAM」とは？しくみや注意点を解説。";
+  - title = "NINJAMとは - Ninjam.JP";
+  - navbaractive = "1";
+block container
+  h2 NINJAMとは
+  .row
+    .col-sm-9
+      blockquote
+        p
+          | a unique way for musicians to collaborate over the Internet in near real time
+        footer
+          | www.cockos.com
+      p
+        | NINJAMは、Cockos Incorporatedによって開発された、オープンソースの遠隔ジャムセッションソフトです。
+      
+      h3 「NINJAM」ってなんの略？
+      p
+        | NINJAMは、
+        em
+          strong N
+          | ovel 
+          strong I
+          | ntervallic 
+          strong N
+          | etwork 
+          strong J
+          | amming 
+          strong A
+          | rchitecture for 
+          strong M
+          | usic 
+        | の略です。
+      
+      h3 しくみと特徴
+      p
+        | インターネットを用いて音声を送受信する場合、必ず遅延が発生します。
+        br
+        | 遅延の大きさは、クライアントとサーバーの距離（P2P技術を用いる場合は各ノード間の距離）、回線速度などによって変わりますが、一般的なVoIP通話程度の遅延では、合奏はおそらく困難でしょう。
+        br
+        | そこでNINJAMでは、ジャムセッションにおいて数小節ごとに同じコード進行を繰り返すことが多いことに着目し、数小節遅れで音声を同期することによって、遅延によるストレスのない快適なジャムセッションを可能にしています。
+      
+      h3 リアルタイムではない
+      p
+        | NINJAMでジャムセッションをする上で最も注意すべき点は、そのセッションが完全なリアルタイムではないということです。上述の特徴的なしくみにより、NINJAMにおけるジャムセッションであなたが聴いている仲間の演奏は、それより一周（数小節）前に演奏されたものになります。
+        br
+        | すなわち、NINJAMは複雑な構成の曲やキメの多い曲を演奏するには向いていません。
+        
+      hr
+      ul.list-unstyled
+        li
+          a(href="//www.cockos.com",target="_blank") Cockos Incorporated | Company
+            span.fa.fa-external-link.fa-fw
+          |  - Cockos Incorporated 公式サイト
+        li
+          a(href="//www.ninjam.com",target="_blank") Cockos Incorporated | NINJAM
+            span.fa.fa-external-link.fa-fw
+          |  - NINJAM製品ページ
+          
+    .col-sm-3.hidden-xs
+      h3
+        span.fa.fa-twitter.fa-fw
+        | ninjam
+      a.twitter-timeline(data-chrome="transparent noscrollbar noheader nofooter",href="//twitter.com/search?q=ninjam",data-widget-id="683991718530691072")
+      
+        
+block append breadcrumb
+  li.active NINJAMとは
+block append script
+  script
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");

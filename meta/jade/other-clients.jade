@@ -1,0 +1,61 @@
+//output: ../../.uncompressed/other-clients.html
+extends components/base
+block head
+  - description = "さまざまな「NINJAM」のクライアントソフトを紹介します。";
+  - title = "その他のクライアント - Ninjam.JP";
+  - navbaractive = "2";
+block container
+  h2 その他のクライアント
+  p
+    | NINJAMジャムセッションに参加するためのソフトウェアは、公式クライアントの他にも多数開発されています。
+    br
+    | 公式クライアントは2005年より開発が停止していると見られるため、パワーユーザーの方はこれらのクライアントの使用をおすすめします。
+    
+  h3 JamTaba
+    span.visible-mobile-inline
+      |  - 
+      span.fa.fa-windows.fa-fw
+      span.fa.fa-apple.fa-fw
+      span.fa.fa-linux.fa-fw
+  p
+    | 直感的なユーザーインターフェース、VSTホスト、サーバー一覧などさまざまな機能を備えた多機能NINJAMクライアント。VSTプラグイン形式でも提供されており、CubaseなどのDAWソフトと連携させることもできる。
+    br
+    a(href="//www.jamtaba.com",target="_blank")
+      | Jamtaba - A Free App to Play Live Music in Online Jam Sessions
+      span.fa.fa-external-link.fa-fw
+    |  - 公式サイト
+  img.img-responsive.img-thumbnail(src="/images/otherclient1.png",alt="JamTaba")
+    
+  .visible-windows-block.visible-macintosh-block.visible-mobile-block
+    h3 Reaper
+      span.visible-mobile-inline
+        |  - 
+        span.fa.fa-windows.fa-fw
+        span.fa.fa-apple.fa-fw
+    p
+      | Cockos IncorporatedのDAWソフト。VSTプラグインの形式でNINJAMクライアントがバンドルされており（ReaNINJAM plug-in）、DAWソフトとしての高度な機能をNINJAMでのジャムセッションに利用できる。有料。
+      br
+      a(href="//www.reaper.fm",target="_blank")
+        | REAPER | Audio Production Without Limits
+        span.fa.fa-external-link.fa-fw
+      |  - 公式サイト
+    img.img-responsive.img-thumbnail(src="/images/otherclient2.png",alt="Reaper")
+      
+  h3 Zenjam
+    span.visible-mobile-inline
+      |  - 
+      span.fa.fa-windows.fa-fw
+      span.fa.fa-apple.fa-fw
+      span.fa.fa-linux.fa-fw
+  p
+    | NINJAMサーバーを運営しているninbotによって開発されたNINJAMクライアント。UIスキンの変更、サーバー一覧など公式クライアントにはない機能を備えている。Linuxにも対応。
+    br
+    a(href="//ninbot.com/zenjam/",target="_blank")
+      | ninbot
+      span.fa.fa-external-link.fa-fw
+    |  - 公式サイト
+  img.img-responsive.img-thumbnail(src="/images/otherclient3.png",alt="Zenjam")
+          
+block append breadcrumb
+  li 導入する
+  li.active その他のクライアント

@@ -1,0 +1,77 @@
+//output: ../../.uncompressed/japanese-patch.html
+extends components/base
+block head
+  - description = "遠隔ジャムセッションツール、「NINJAM」のクライアントのセットアップ方法を解説します。";
+  - title = "インストール - Ninjam.JP";
+  - navbaractive = "2";
+block container
+  h2 日本語化パッチ
+  p
+    | 公式NINJAMクライアントを日本語化することができます。
+  include components/uabutton
+  .visible-windows-block
+    ol.explain
+      li
+        | 下のボタンから日本語化パッチをダウンロードします。
+        br
+        button.btn.btn-primary#dlbtn(data-toggle="modal",data-target="#download")
+          span.fa.fa-download.fa-fw
+          ダウンロード（88.2 KB）
+      li
+        | ダウンロードした「ninjam_japanese_win006.zip」を解凍します。
+        p.text-muted
+          | .ZIPファイルの解凍方法については、
+          a(href="//windows.microsoft.com/ja-jp/windows/compress-uncompress-files-zip-files",target="_blank") こちら
+          | をご覧ください。
+      li
+        | 解凍したファイルの中に含まれている「ninjam_japanese_win006.exe」を、ninjam.exeと同じディレクトリに移動します。
+        br
+        img.img-responsive.img-thumbnail(src="/images/winjapanese1.png",alt="日本語化パッチをNINJAMと同ディレクトリに移動")
+        p.text-muted
+          | NINJAM公式クライアントをまだ入手していない方は、
+          a(href="/install") こちら
+          | をご覧ください。
+      li
+        | 「ninjam_japanese_win006.exe」を実行します。
+        p.text-muted
+          | 「ninjam_japanese_win006.exe」を実行するには、システムの管理者権限が必要です。
+      li
+        | 「はい」をクリックします。
+        br
+        img.img-responsive.img-thumbnail(src="/images/winjapanese2.png",alt="確認ダイアログ")
+      li
+        | 「ninjam.exe」を起動し、問題なく日本語化されていることを確認してください。
+        br
+        img.img-responsive.img-thumbnail(src="/images/winjapanese3.png",alt="NINJAMクライアントの動作を確認")
+  .visible-macintosh-block.alert.alert-danger
+    | Macintosh向け公式NINJAMクライアントは、最新のIntel Mac上では実行できません。
+    span.fa.fa-question-circle.fa-fw.text-primary(data-toggle="tooltip",data-placement="right",title="Macintosh向け公式NINJAMクライアントはPowerPCアプリケーションのため、最新のIntel Mac上で実行する方法はありません。「導入する」>「その他のクライアント」より、Intel Macに対応したNINJAMクライアントを入手してください。")
+  .visible-linux-block.alert.alert-danger
+    | NINJAM日本語化パッチは、現在Linuxには対応していません。
+    
+  .modal.fade#download(tabindex="-1")
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(data-dismiss="modal")
+            span(aria-hidden="true") &times;
+          h4.modal-title.text-warning#modal-label
+            span.fa.fa-exclamation-triangle.fa-fw
+            | 注意
+        .modal-body
+          | このソフトウェアをダウンロード、および実行したことによって生じる一切の損害について、Ninjam.JPはその責任を負いません。
+          br
+          | 「OK」を押すと、以上を了承したものと見なされ、ダウンロードが開始されます。
+        .modal-footer
+          button.btn.btn-default(data-dismiss="modal") キャンセル
+          button.btn.btn-primary(onclick="download();") OK
+    
+block append breadcrumb
+  li 導入する
+  li.active 日本語化パッチ
+  
+block append script
+  script function download(){location.href="//dl.dropboxusercontent.com/u/173582902/ninjam_japanese_win006.zip";}
+  script $('#btn2,#btn3').attr("disabled","");
+    
+  

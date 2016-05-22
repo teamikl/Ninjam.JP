@@ -1,0 +1,51 @@
+//output: ../../.uncompressed/index.html
+extends components/base
+block head
+  - description = "画期的な遠隔ジャムセッションツール、「NINJAM」の非公式日本語情報サイト。使い方や設定方法などを解説。";
+  - title = "Ninjam.JP - 世界中の仲間とジャムセッション";
+block container
+  h1
+    strong NINJAM
+    | で、世界中の仲間とジャムセッションをしよう。
+  .row
+    .col-md-offset-3.col-md-6.col-sm-offset-2.col-sm-8.youtubeembed
+      .embed-responsive.embed-responsive-16by9
+        iframe.embed-responsive-item(src="//www.youtube.com/embed/null?rel=0&amp;showinfo=0",frameborder="0".allowfullscreen)
+  .row
+    .col-sm-3
+      .text-center
+        img(src="/images/index1.svgz",width="64px",height="64px",alt="アイコン")
+      h4.imgtitle 地球の裏側のミュージシャンと共演できます
+      p
+        | 遠い外国のミュージシャンとの共演も、もはや難しい時代ではなくなりました。飛行機でいけば何時間もかかるような場所にいる仲間とジャムセッションするときも、
+        strong あなたはいつものようにPCの前にいるだけでいいのです
+        | 。
+    .col-sm-3
+      .text-center
+        img(src="/images/index2.svgz",width="64px",height="64px",alt="アイコン")
+      h4.imgtitle 特別なものは必要ありません
+      p
+        | ジャムセッションに参加するために、
+        strong 特別な道具を用意する必要はありません
+        | 。普段お使いのPCにクライアントをインストールするだけですぐに始められます。
+    .col-sm-3
+      .text-center
+        img(src="/images/index3.svgz",width="64px",height="64px",alt="アイコン")
+      h4.imgtitle 高速な回線は必要ありません
+      p
+        a(href="//www.ninjam.com/",target="_blank")
+          | ninjam.com
+          span.fa.fa-external-link.fa-fw
+        | によると、8人でのジャムセッションに必要な帯域幅は512kbpsです。NINJAMの特徴である同期システムにより、
+        strong 回線速度による遅延を気にする必要はありません
+        | 。
+    .col-sm-3
+      .text-center
+        img(src="/images/index4.svgz",width="64px",height="64px",alt="アイコン")
+      h4.imgtitle セットアップは簡単です
+      p
+        | 煩雑な設定や面倒な登録は必要ありません。オーディオの入出力が問題なく行えるPCであれば、
+        strong インストールして5分でジャムセッションに参加できます
+        | 。
+        
+block breadcrumb

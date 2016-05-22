@@ -1,0 +1,77 @@
+//output: ../../.uncompressed/audio-io.html
+extends components/base
+block head
+  - description = "遠隔ジャムセッションツール、「NINJAM」のセットアップ方法を解説します。";
+  - title = "オーディオ入出力環境 - Ninjam.JP";
+  - navbaractive = "2";
+block container
+  h2 オーディオ入出力環境
+  p
+    | ソフトウェアの導入が完了したら、PCのオーディオ入出力環境を確認しましょう。
+  include components/uabutton
+  
+  h3 内蔵のオーディオインターフェースを使用する
+  p
+    | 最も一般的なのは、PCに内蔵されているマイクやマイク端子とヘッドフォン端子を使用する方法でしょう。
+  img.img-responsive.img-thumbnail(src="/images/audio-io1.png",alt="オーディオ入出力端子")
+  .visible-windows-block
+    ol.explain
+      li
+        | PCのマイク端子に楽器やマイクを接続するか、内蔵マイクに安定して音が入力できるように楽器などを設置してください。
+        p.text-muted
+          | 「内蔵マイクを使用する場合は、ハウリング防止のため必ずヘッドフォンを使用してモニタしてください。
+      li
+        | NINJAMクライアントを起動し、「Options（設定）」>「Audio configuration...（オーディオ設定）」を選択します。
+        br
+        img.img-responsive.img-thumbnail(src="/images/audio-io3.png",alt="Audio configuration...")
+      li
+        | 「Input/output system（ドライバ設定）」で「Kernel Streaming」を選択します。
+        br
+        img.img-responsive.img-thumbnail(src="/images/audio-io5.png",alt="Kernel Streaming")
+  .visible-macintosh-block.alert.alert-danger
+    | Macintosh向け公式NINJAMクライアントは、最新のIntel Mac上では実行できません。
+    span.fa.fa-question-circle.fa-fw.text-primary(data-toggle="tooltip",data-placement="right",title="Macintosh向け公式NINJAMクライアントはPowerPCアプリケーションのため、最新のIntel Mac上で実行する方法はありません。「導入する」>「その他のクライアント」より、Intel Macに対応したNINJAMクライアントを入手してください。")
+  .visible-linux-block
+    | 準備中…
+    
+  h3 外付けのオーディオインターフェースを使用する
+  p
+    | DTMなどに使用する
+    a(href="//www.soundhouse.co.jp/category/middle/30", target="_blank")
+      | 外付けのオーディオインターフェース
+      span.fa.fa-external-link.fa-fw
+    | を使用すると、非常に高音質で安定したオーディオ入出力環境を構築できます。（推奨）
+  img.img-responsive.img-thumbnail(src="/images/audio-io2.png",alt="オーディオインターフェース")
+  .visible-windows-block
+    ol.explain
+      li
+        | オーディオインターフェースをPCに接続します。
+        p.text-muted
+          | 接続方法の詳細は機器に付属の取扱説明書などをご覧ください。
+      li
+        | オーディオインターフェースのドライバをPCにインストールします。
+        p.text-muted
+          | ドライバは多くの場合、光学ディスクなどの形で機器に同梱されているか、Webなどで配布されています。詳細は機器に付属の取扱説明書などをご覧ください。
+      li
+        | NINJAMクライアントを起動し、「Options（設定）」>「Audio configuration...（オーディオ設定）」を選択します。
+        br
+        img.img-responsive.img-thumbnail(src="/images/audio-io3.png",alt="Audio configuration...")
+      li
+        | 「Input/output system（ドライバ設定）」で「ASIO」を選択します。
+        br
+        img.img-responsive.img-thumbnail(src="/images/audio-io4.png",alt="ASIO")
+        p.text-muted
+          | NINJAMでASIOを使用するには、ninjam.exeと同じディレクトリにnjasiodrv.dllが設置されていることが必要です。njasiodrv.dllが見当たらない場合は、
+          a(href="/install") こちら
+          | よりクライアントをセットアップしなおしてください。
+      li 
+        | 「ASIO Driver」でお使いのオーディオインターフェースのドライバを選択します。
+  .visible-macintosh-block.alert.alert-danger
+    | Macintosh向け公式NINJAMクライアントは、最新のIntel Mac上では実行できません。
+    span.fa.fa-question-circle.fa-fw.text-primary(data-toggle="tooltip",data-placement="right",title="Macintosh向け公式NINJAMクライアントはPowerPCアプリケーションのため、最新のIntel Mac上で実行する方法はありません。「導入する」>「その他のクライアント」より、Intel Macに対応したNINJAMクライアントを入手してください。")
+  .visible-linux-block
+    | 準備中
+          
+block append breadcrumb
+  li 導入する
+  li.active オーディオ入出力環境

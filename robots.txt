@@ -1,0 +1,5 @@
+# robots.txt for http://www.ninjam.jp/
+
+User-agent: *
+
+Sitemap: http://www.ninjam.jp/sitemap.xml

@@ -1,0 +1,55 @@
+nav.navbar.navbar-default
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed(type="button",data-toggle="collapse",data-target="#navbar",aria-expanded="false",aria-controls="navbar")
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand.logo.logo-green(href="/") Ninjam.JP
+    .collapse.navbar-collapse#navbar
+      ul.nav.navbar-nav
+        li#nv1
+          a(href="/what-is-ninjam")
+            span.fa.fa-question-circle.fa-fw
+            | NINJAMとは
+        li.dropdown#nv2
+          a(href="#",class="dropdown-toggle",data-toggle="dropdown")
+            span.fa.fa-cogs.fa-fw
+            | 導入する
+          ul.dropdown-menu
+            li
+              a(href="/install") インストール
+            li.visible-windows-block.visible-mobile-block
+              a(href="/japanese-patch") 日本語化パッチ
+            li
+              a(href="/audio-io") オーディオ入出力環境
+            li
+              a(href="/other-clients") その他のクライアント
+            li
+              a(href="/build-server") サーバーの構築
+        li.dropdown#nv3
+          a(href="#",class="dropdown-toggle",data-toggle="dropdown")
+            span.fa.fa-mouse-pointer.fa-fw
+            | 使用する
+          ul.dropdown-menu
+            li
+              a(href="/connect") サーバーに接続
+            li
+              a(href="/panel") パネル説明
+        li#nv4
+          a(href="/server-list")
+            span.fa.fa-server.fa-fw
+            | サーバーリスト
+        li
+          a(href="//groups.google.com/d/forum/ninjamjp",target="_blank")
+            span.fa.fa-users.fa-fw
+            | フォーラム
+      ul.nav.navbar-nav.navbar-right.visible-lg
+        li
+          form.navbar-form#cse-search-box(action="//google.com/cse",target="_blank")
+            .form-group.form-group-sm.has-feedback
+              input(type="hidden",name="cx",value="013219256449188032989:5obcwkryzqs")
+              input(type="hidden",name="ie",value="utf-8")
+              input.form-control(type="text",name="q",size="15")
+              span.fa.fa-search.form-control-feedback

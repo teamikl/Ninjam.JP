@@ -1,0 +1,65 @@
+//output: ../../.uncompressed/install.html
+extends components/base
+block head
+  - description = "遠隔ジャムセッションツール、「NINJAM」のクライアントのセットアップ方法を解説します。";
+  - title = "インストール - Ninjam.JP";
+  - navbaractive = "2";
+block container
+  h2 インストール
+    a.btn.btn-primary.pull-right.hidden-xs(href="other-clients")
+      span.fa.fa-arrow-circle-right.fa-fw
+      | 他のクライアントを使用する
+  p
+    | ジャムセッションに参加するには、クライアントと呼ばれるソフトウェアが必要です。ここでは、公式NINJAMクライアントのセットアップ方法を解説します。
+  include components/uabutton
+  .visible-windows-block
+    ol.explain
+      li
+        a(href="//www.ninjam.com#Downloads",target="_blank")
+          | ninjam.com
+          span.fa.fa-external-link.fa-fw
+        | から「ninjam_winclient_006.zip」をダウンロードします。
+        br
+        img.img-responsive.img-thumbnail(src="/images/winsetup1.png",alt="ダウンロード")
+        p.text-muted
+          | 「
+          strong Download Windows client
+          |  v0.06 (1MB ZIP)」を選択します。
+      li
+        | ダウンロードした「ninjam_winclient_006.zip」を解凍します。
+        p.text-muted
+          | .ZIPファイルの解凍方法については、
+          a(href="//windows.microsoft.com/ja-jp/windows/compress-uncompress-files-zip-files",target="_blank") こちら
+          | をご覧ください。
+      li
+        | 解凍したフォルダに含まれている「ninjam.exe」を実行し、問題なくセットアップが完了したことを確認してください。
+        br
+        img.img-responsive.img-thumbnail(src="/images/winsetup2.png",alt="ninjam.exeを起動")
+  .visible-macintosh-block.alert.alert-danger
+    | Macintosh向け公式NINJAMクライアントは、最新のIntel Mac上では実行できません。
+    span.fa.fa-question-circle.fa-fw.text-primary(data-toggle="tooltip",data-placement="right",title="Macintosh向け公式NINJAMクライアントはPowerPCアプリケーションのため、最新のIntel Mac上で実行する方法はありません。ページ右上の「他のクライアントを使用する」より、Intel Macに対応したNINJAMクライアントを入手してください。")
+  .visible-linux-block
+    ol.explain
+      li
+        a(href="//www.ninjam.com#Downloads",target="_blank")
+          | ninjam.com
+          span.fa.fa-external-link.fa-fw
+        | からソースコードをダウンロードします。
+        br
+        img.img-responsive.img-thumbnail(src="/images/linuxsetup1.png",alt="ダウンロード")
+        p.text-muted
+          | 「
+          strong Download Linux client source code
+          |  v0.01a (80kB TAR.GZ)」を選択します。
+      li
+        | ダウンロードした「cclient_src_v0.01a.tar.gz」を解凍します。
+        p.text-muted
+          | .TAR.GZファイルの解凍方法については、
+          a(href="//itpro.nikkeibp.co.jp/article/COLUMN/20060228/231198/",target="_blank") こちら
+          | をご覧ください。
+      li
+        | 解凍したソースコードをビルドし、実行してください。
+          
+block append breadcrumb
+  li 導入する
+  li.active インストール

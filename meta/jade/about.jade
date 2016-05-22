@@ -1,0 +1,100 @@
+//output: ../../.uncompressed/about.html
+extends components/base
+block head
+  - description = "画期的な遠隔ジャムセッションツール、「NINJAM」の非公式日本語情報サイト。使い方や設定方法などを解説。";
+  - title = "Ninjam.JPについて";
+  meta(name="robots",content="noindex")
+block container
+  h2
+    span.logo.logo-green
+      | Ninjam.JP
+    | について
+  p
+    | Ninjam.JP（以下、本サイト）は、Cockos Incorporatedの開発した遠隔ジャムセッションツール、NINJAMの
+    strong
+      | 非公式
+    | 日本語情報サイトです。
+    br
+    | なお、本サイト及び本サイトの運営者（以下、運営者）は、Cockos Incorporatedとは一切関係ありません。
+    
+  h3 目的
+  p
+    | 本サイトの目的は、画期的かつ非常に有用な遠隔ジャムセッションツールであるNINJAMに関する情報を日本語で整理、提供し、国内での遠隔ジャムセッションの普及と振興に貢献することです。
+    
+  h3 個人情報保護方針
+  p
+    | 本サイトでは、サイトの利便性の向上を目的としたサイト利用情報の分析のためにGoogle,Inc.のGoogle Analyticsを使用しており、これに伴う情報収集のためにCookieを使用します。また、IPアドレスなどの利用者情報の一部がGoogle,Inc.に送信される場合があります。
+    br
+    | 本サイトの利用者は、本サイトを利用することによって利用者情報等に関する以上の処理を承諾したものと見なします。
+    
+  h3 免責事項
+  p
+    | 運営者は、本サイトにて提供する情報の正確性について、いかなる保証もするものではありません。
+    br
+    | また、いかなる場合においても、本サイトの情報およびコンテンツを利用したことによって生じる一切の損害について、運営者は一切の責任を負いません。
+    
+  h3 参加
+  p
+    | 本サイトは、ごく少人数の有志によって運営されています。我々の活動をより良いものとするために協力してくださる方は、
+    span
+      script function converter(M){var str="", str_as="";for(var i=0;i<M.length;i++){str_as = M.charCodeAt(i);str += String.fromCharCode(str_as + 1);}return str;}var ad = converter(String.fromCharCode(98,110,109,115,96,98,115,63,109,104)+String.fromCharCode(109,105,96,108,45,105,111));document.write("<a href=\"mai"+"lto:"+ad+"\">"+ad+"<\/a>");
+    | までご連絡ください。
+    br
+    | また、
+    a(href="//groups.google.com/d/forum/ninjamjp",target="_blank") フォーラム
+    | で議論に参加したり、ユーザーの質問に回答することで、日本のNINJAMコミュニティに貢献することもできます。
+    
+  h3 寄付
+  p
+    | 本サイトの目的に共感し、我々の活動を支援してくださる方は、少額の寄付をお願い致します。
+  .blockchain-btn(data-address="1JGhbC5rz9jcaTaMhteagQLQgztYsf75Zy",data-shared="false")
+    .blockchain.stage-begin
+      button.btn.btn-primary(data-toggle="modal" data-target="#donate")
+        span.fa.fa-btc.fa-fw
+        | ビットコインで寄付
+    .modal.fade#donate(tabindex="-1")
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type="button",data-dismiss="modal")
+              span(aria-hidden="true") &times;
+            h4.modal-title.text-primary#modal-label
+              span.fa.fa-btc.fa-fw
+              | 寄付
+          .modal-body
+            .blockchain.stage-loading
+              p.text-primary
+                span.fa.fa-spinner.fa-pulse.fa-4x.fa-fw
+                | Loading...
+            .blockchain.stage-ready
+              p#bitaddress
+                [[address]]
+              span.qr-code
+            .blockchain.stage-paid
+              p
+                span.fa.fa-check-circle-o.fa-4x.text-success
+                br
+                strong [[value]] BTC
+                | の寄付を受け取りました。ご支援ありがとうございます。
+            .blockchain.stage-error
+              p.danger
+                span.fa.fa-exclamation-triangle.fa-4x.fa-fw
+                | Error.
+          .modal-footer
+            button.btn.btn-primary(type="button",data-dismiss="modal") 閉じる
+    
+  hr
+  ul.credits.list-unstyled
+    li Takeshita Leo 
+      a(href="//twitter.com/TakeshitaLeo",target="_blank")
+        span.fa.fa-twitter.fa-fw(data-toggle="tooltip",data-placement="right",title="@TakeshitaLeo")
+      p.text-muted
+        | 執筆、Webデザイン、メンテナンス
+    li tea
+      p.text-muted
+        | Webデザイン
+
+block append breadcrumb
+  li.active Ninjam.JPについて
+block append script
+  script(src="//blockchain.info/Resources/wallet/pay-now-button.js")

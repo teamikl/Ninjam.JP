@@ -1,0 +1,44 @@
+//output: ../../.uncompressed/connect.html
+extends components/base
+block head
+  - description = "遠隔ジャムセッションツール、「NINJAM」のサーバーに接続する方法を解説します。";
+  - title = "サーバーに接続 - Ninjam.JP";
+  - navbaractive = "3";
+block container
+  h2 NINJAMサーバーに接続する
+  p
+    | ジャムセッションに参加するために、まずはサーバーに接続しましょう。
+  include components/uabutton
+  .visible-windows-block
+    ol.explain
+      li
+        | NINJAMクライアントを起動し、「File（接続）」>「Connect...（サーバーに接続）」を選択します。
+        br
+        img.img-responsive.img-thumbnail(src="/images/connect1.png",alt="Connect")
+      li
+        | 「Connect to host（サーバー）」に接続するサーバーの
+        strong アドレス
+        | と
+        strong ポート番号
+        | を、「Username（ユーザー名）」に任意のユーザー名を、「Password（パスワード）」にサーバーのパスワードを入力し、「Connect（接続）」を選択します。
+        br
+        img.img-responsive.img-thumbnail(src="/images/connect2.png",alt="Connect")
+        p.text-muted
+          | 公開サーバーの一覧は、
+          a(href="/server-list") こちら
+          | をご覧ください。
+          br
+          | 匿名接続が可能なサーバーに接続する場合は、「Connect anonymously（匿名で接続）」にチェックを入れてください。
+      li
+        | 表示されたサーバーの利用規約を熟読し、同意できる場合は「I agree to the above license terms（私はこの規約に同意します。）」にチェックを入れ、「Accept（OK）」を選択します。
+        br
+        img.img-responsive.img-thumbnail(src="/images/connect3.png",alt="サーバーの利用規約に同意")
+  .visible-macintosh-block.alert.alert-danger
+    | Macintosh向け公式NINJAMクライアントは、最新のIntel Mac上では実行できません。
+    span.fa.fa-question-circle.fa-fw.text-primary(data-toggle="tooltip",data-placement="right",title="Macintosh向け公式NINJAMクライアントはPowerPCアプリケーションのため、最新のIntel Mac上で実行する方法はありません。「導入する」>「その他のクライアント」より、Intel Macに対応したNINJAMクライアントを入手してください。")
+  .visible-linux-block
+    | 準備中…
+    
+block append breadcrumb
+  li 使用する
+  li.active サーバーに接続

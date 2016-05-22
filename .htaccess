@@ -1,0 +1,49 @@
+DirectoryIndex index.html.gz
+
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}\.html.gz -f
+  RewriteRule ^(.*)$ $1.html.gz
+  RewriteBase /
+
+  RewriteCond %{HTTP_HOST} ^ninjam\.jp
+  RewriteRule (.*) http://www.ninjam.jp/$1 [R=301,L]
+
+  RewriteCond %{THE_REQUEST} ^.*/index.html
+  RewriteRule ^(.*)index.html$ http://www.ninjam.jp/$1 [R=301,L]
+
+  RewriteCond %{HTTP:Accept-Encoding} gzip
+  RewriteCond %{REQUEST_FILENAME} !\.gz$
+  RewriteCond %{REQUEST_FILENAME}\.gz -s
+  RewriteRule .+ %{REQUEST_URI}.gz
+  AddEncoding x-gzip .gz
+
+  ErrorDocument 401 /401
+  ErrorDocument 403 /403
+  ErrorDocument 404 /404
+
+  AddType image/svg+xml .svg .svgz
+  AddEncoding gzip .svgz
+</IfModule>
+
+<files *.html.gz>
+AddType "text/html;charset=utf-8" .gz
+</files>
+
+<files *.js.gz>
+AddType "text/javascript;charset=utf-8" .gz
+</files>
+
+<files *.css.gz>
+AddType "text/css" .gz
+</files>
+
+<Files ~ ".(gif|jpe?g|png|ico|js|ttf|svg)$">
+	Header set Cache-Control "max-age=2592000, public"
+</Files>
+
+<Files ~ "^\.">
+   deny from all
+</Files>

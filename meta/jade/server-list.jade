@@ -1,0 +1,31 @@
+//output: ../../.uncompressed/server-list.html
+extends components/base
+block head
+  - description = "遠隔ジャムセッションツール「NINJAM」の公開サーバーの一覧です。";
+  - title = "サーバーリスト - Ninjam.JP";
+  - navbaractive = "4";
+block container
+  h2 サーバーリスト
+  p
+    | 公開NINJAMサーバーの一覧です。
+  table.table
+    thead
+      tr
+        th
+          span.fa.fa-server.fa-fw.hidden-xs
+          | サーバー
+        th
+          span.fa.fa-user.fa-fw.hidden-xs
+          | 現在
+          span.hidden-xs ジャムセッション中
+          | のユーザー
+    tbody#tableBody
+  p.pull-right.text-muted
+    | Powered by 
+    a(href="//ninbot.com",target="_blank") ninbot
+      span.fa.fa-external-link.fa-fw
+
+block append breadcrumb
+  li.active サーバーリスト
+block append script
+  script(src="/js/serverlist.js")

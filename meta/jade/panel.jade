@@ -1,0 +1,29 @@
+//output: ../../.uncompressed/panel.html
+extends components/base
+block head
+  - description = "遠隔ジャムセッションツール、「NINJAM」クライアントの操作方法を解説します。";
+  - title = "パネル説明 - Ninjam.JP";
+  - navbaractive = "3";
+block container
+  h2 パネル説明
+  p
+    | ジャムセッションに参加するために、まずはサーバーに接続しましょう。
+  include components/uabutton
+  .visible-windows-block
+    img.img-responsive.img-thumbnail(src="/images/panel1.png", alt="パネル説明")
+    | 準備中…
+    h4 ①:マスター
+    h4 ②:メトロノーム
+    h4 ③:ローカルチャンネル
+    h4 ④:リモートチャンネル
+    h4 ⑤:チャット
+    h4 ⑥:メトロノーム インジケーター
+  .visible-macintosh-block.alert.alert-danger
+    | Macintosh向け公式NINJAMクライアントは、最新のIntel Mac上では実行できません。
+    span.fa.fa-question-circle.fa-fw.text-primary(data-toggle="tooltip",data-placement="right",title="Macintosh向け公式NINJAMクライアントはPowerPCアプリケーションのため、最新のIntel Mac上で実行する方法はありません。「導入する」>「その他のクライアント」より、Intel Macに対応したNINJAMクライアントを入手してください。")
+  .visible-linux-block
+    | 準備中…
+    
+block append breadcrumb
+  li 使用する
+  li.active パネル説明

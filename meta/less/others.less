@@ -1,0 +1,62 @@
+//bitcoindonate
+#bitaddress{
+  color: @brand-primary;
+  font-weight: bold;
+  word-wrap: break-word;
+}
+
+//youtube
+.youtubeembed{
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+//footer
+.footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  background-color: lighten(@navbar-default-bg, 5%);
+}
+
+//
+.explain{
+  >li{
+    font-size: @font-size-h4;
+    font-weight: @headings-font-weight;
+    margin:0;
+    padding:0;
+    word-wrap: break-word;
+    .text-muted{
+      font-size: @font-size-base;
+      font-weight: normal;
+    }
+  }
+  padding-left:2em;
+}
+
+//credits
+.credits{
+  >li{
+    font-size: ceil((@font-size-base * 1.15));
+    font-weight: @headings-font-weight;
+    .text-muted{
+      font-size: @font-size-base;
+      font-weight: normal;
+    }
+  }
+}
+
+/*/col xs
+[class*="col-"]{
+  @media (max-width: @screen-xs-max){
+    padding-left: 0;
+    padding-right: 0;
+  }
+}*/
+
+//useragent
+[class*="visible-windows"],[class*="visible-macintosh"],[class*="visible-linux"],[class*="visible-mobile"]{
+  display: none;
+}
