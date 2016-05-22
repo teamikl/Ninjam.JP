@@ -2,3 +2,4 @@
 /.live-archive
 /.uncompressed
 /*.gz
+/node_modules
