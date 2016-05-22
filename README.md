@@ -3,4 +3,4 @@
 
 ## ※
 htmlファイルやcssファイルは、それぞれ **/meta/** ディレクトリ内のjade、及びlessを用いて編集します。  
-jade、及びlessのコンパイル先（htmlやcssの格納先）は、 **/uncompressed/** です。
+jade、及びlessのコンパイル先（htmlやcssの格納先）は、 **/.uncompressed/** です。
