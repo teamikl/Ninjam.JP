@@ -2,5 +2,4 @@
 /.live-archive
 /*.gz
 /node_modules
-/gulpfile.js
 /.htaccess
