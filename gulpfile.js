@@ -66,7 +66,7 @@ gulp.task('deploy', ['compress:dist'], function(){
 
     // 設定ファイルを記述する(Pitで管理)
     // @see https://www.npmjs.com/package/pit-ro
-    pit.pitDir = '.';
+    pit.pitDir = './.pit';
     var config = pit.get('ftp.example.jp', 'config');
 
     // 以下のコードは未テスト
