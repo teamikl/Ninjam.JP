@@ -1,5 +1,5 @@
 /.ftpconfig
 /.live-archive
-/.uncompressed
 /*.gz
 /node_modules
+/gulpfile.js
