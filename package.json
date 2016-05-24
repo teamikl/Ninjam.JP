@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/teamikl/test-web-site.git"
+    "url": "git+https://github.com/takeshitaleo/Ninjam.JP.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/teamikl/test-web-site/issues"
+    "url": "https://github.com/takeshitaleo/Ninjam.JP/issues"
   },
-  "homepage": "https://github.com/teamikl/test-web-site#readme",
+  "homepage": "http://www.ninjam.jp/",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-coffee": "^2.3.2",
