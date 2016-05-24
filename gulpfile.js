@@ -44,7 +44,7 @@ gulp.task('compile:all', ['jade', 'less', 'coffee']);
 
 
 // ファイル圧縮
-// 依存: jade, less, coffe
+// 依存: jade, less, coffee
 gulp.task('compress:dist', ['compile:all'], function(){
     return gulp.src(['./dist/*.html', './dist/*.css', './dist/*.js'])
         // .pipe(debug())
@@ -63,7 +63,7 @@ gulp.task('clean:dist', function(callback){
 // 依存: build
 gulp.task('deploy', ['compress:dist'], function(){
     var pit = require('pit-ro');
-  
+
     // 設定ファイルを記述する(Pitで管理)
     // @see https://www.npmjs.com/package/pit-ro
     pit.pitDir = '.';
