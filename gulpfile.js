@@ -9,7 +9,8 @@ var gulp = require('gulp'),
     // debug = require('gulp-debug'),
     plumber = require('gulp-plumber'),
     ftp = require('vinyl-ftp'),
-    rimraf = require('rimraf');
+    rimraf = require('rimraf'),
+    uglify = require('gulp-uglify');
 
 var DIST_DIR = "./dist/";
 
@@ -37,6 +38,7 @@ gulp.task('coffee', function(){
     return gulp.src(['src/coffee/*.coffee'])
         .pipe(plumber())
         .pipe(coffee())
+        .pipe(uglify())
         .pipe(gulp.dest(DIST_DIR));
 });
 
@@ -66,8 +68,8 @@ gulp.task('deploy', ['compress:dist'], function(){
 
     // 設定ファイルを記述する(Pitで管理)
     // @see https://www.npmjs.com/package/pit-ro
-    pit.pitDir = './.pit';
-    var config = pit.get('ftp.example.jp', 'config');
+    pit.pitDir = '/.pit';
+    var config = pit.get('ftp.ninjam.jp', 'config');
 
     // 以下のコードは未テスト
 

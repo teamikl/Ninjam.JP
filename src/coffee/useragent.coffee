@@ -1,25 +1,25 @@
 wua = ->
   $('.visible-windows-block').css 'display', 'block'
   $('.visible-windows-inline').css 'display', 'inline'
-  $('.hidden-windows').css 'display', 'none'
+  $('.hidden-windows').hide()
   return
 
 mua = ->
   $('.visible-macintosh-block').css 'display', 'block'
   $('.visible-macintosh-inline').css 'display', 'inline'
-  $('.hidden-macintosh').css 'display', 'none'
+  $('.hidden-macintosh').hide()
   return
 
 lua = ->
   $('.visible-linux-block').css 'display', 'block'
   $('.visible-linux-inline').css 'display', 'inline'
-  $('.hidden-linux').css 'display', 'none'
+  $('.hidden-linux').hide()
   return
 
 moua = ->
   $('.visible-mobile-block').css 'display', 'block'
   $('.visible-mobile-inline').css 'display', 'inline'
-  $('.hidden-mobile').css 'display', 'none'
+  $('.hidden-mobile').hide()
   return
 
 rmf1 = ->
@@ -35,7 +35,7 @@ rmf3 = ->
   return
 
 wbtn = ->
-  $('.visible-macintosh-block,.visible-linux-block,.visible-macintosh-inline,.visible-linux-inline').css 'display', 'none'
+  $('.visible-macintosh-block,.visible-linux-block,.visible-macintosh-inline,.visible-linux-inline').hide()
   wua()
   rmf2()
   rmf3()
@@ -43,7 +43,7 @@ wbtn = ->
   return
 
 mbtn = ->
-  $('.visible-windows-block,.visible-linux-block,.visible-windows-inline,.visible-linux-inline').css 'display', 'none'
+  $('.visible-windows-block,.visible-linux-block,.visible-windows-inline,.visible-linux-inline').hide()
   mua()
   rmf1()
   rmf3()
@@ -51,7 +51,7 @@ mbtn = ->
   return
 
 lbtn = ->
-  $('.visible-windows-block,.visible-macintosh-block,.visible-windows-inline,.visible-macintosh-inline').css 'display', 'none'
+  $('.visible-windows-block,.visible-macintosh-block,.visible-windows-inline,.visible-macintosh-inline').hide()
   lua()
   rmf1()
   rmf2()

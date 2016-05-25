@@ -3,24 +3,21 @@
   Licensed under the MIT license : https://opensource.org/licenses/mit-license.php
 ###
 
-getName = (a) ->
-  a.name
-
-isNotBot = (a) ->
-  !a.match(/^(ninbot|Jambot)$/)
-
-updateServerList = ->
-  $.get 'http://ninbot.com/app/servers.php', (b) ->
-    b = JSON.parse(b.responseText.replace(/<[^>]*>/g, ''))
-    if typeof b.servers != 'undefined'
-      a = $('#tableBody').empty()
-      $(b.servers).each (c, e) ->
-        d = $('<tr>').css(display: 'none').append($('<td>').text(e.name)).append($('<td>').text(e.users.map(getName).filter(isNotBot).join(' / ')))
-        a.append d
-        d.fadeIn 'normal'
-        return
-    return
-  return
-
-setInterval updateServerList, 30000
-updateServerList()
+do ->
+  td = (x) -> $('<td>').text x
+  getName = (x) -> x.name
+  isNotBot = (x) -> !x.match /^(ninbot|Jambot)$/
+  updateServerList = ->
+    $.get 'http://ninbot.com/app/servers.php', (contents) ->
+      data = JSON.parse(contents.responseText.replace(/<[^>]*>/g, ''))
+      if data.servers?
+        tbody = $('#tableBody').empty()
+        $(data.servers).each (_, x) ->
+          tr = $('<tr>')
+            .hide()
+            .append td x.name
+            .append td x.users.map(getName).filter(isNotBot).join ' / '
+            .fadeIn 'normal'
+          tbody.append tr
+  updateServerList()
+  setInterval updateServerList, 30000
