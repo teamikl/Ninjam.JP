@@ -1,5 +1,7 @@
-### Copyright (c) 2016 Ikkei Shimomura(tea)
-  Licensed under the MIT license : https://opensource.org/licenses/mit-license.php  ###
+###
+  Copyright (c) 2016 Ikkei Shimomura(tea)
+  Licensed under the MIT license : https://opensource.org/licenses/mit-license.php
+###
 
 getName = (a) ->
   a.name
