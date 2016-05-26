@@ -10,7 +10,8 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     ftp = require('vinyl-ftp'),
     rimraf = require('rimraf'),
-    uglify = require('gulp-uglify');
+    uglify = require('gulp-uglify'),
+    cssmin = require('gulp-cssmin');
 
 var DIST_DIR = "./dist/";
 
@@ -29,6 +30,7 @@ gulp.task('less', function(){
     return gulp.src(['src/less/*.less'])
         .pipe(plumber())
         .pipe(less())
+        .pipe(cssmin())
         .pipe(gulp.dest(DIST_DIR));
 });
 
@@ -43,6 +45,13 @@ gulp.task('coffee', function(){
 });
 
 gulp.task('compile:all', ['jade', 'less', 'coffee']);
+
+
+//その他のファイル
+gulp.task('others', function(){
+    return gulp.src(['src/images/*.png', 'src/.htaccess', 'src/robots.txt', 'src/sitemap.xml'])
+        .pipe(gulp.dest(DIST_DIR));
+});
 
 
 // ファイル圧縮
@@ -68,7 +77,7 @@ gulp.task('deploy', ['compress:dist'], function(){
 
     // 設定ファイルを記述する(Pitで管理)
     // @see https://www.npmjs.com/package/pit-ro
-    pit.pitDir = '/.pit';
+    pit.pitDir = '/home/leo/Dropbox/web/www.ninjam.jp/.pit';
     var config = pit.get('ftp.ninjam.jp', 'config');
 
     // 以下のコードは未テスト
@@ -88,6 +97,7 @@ gulp.task('watch', function(){
     gulp.watch('src/jade/*.jade', ['jade']);
     gulp.watch('src/less/*.less', ['less']);
     gulp.watch('src/coffee/*.coffee', ['coffee']);
+    gulp.watch('src/images/*.png', 'src/.htaccess', 'src/robots.txt', 'src/sitemap.xml', ['others']);
 });
 
 

@@ -12,7 +12,7 @@ block container
   h3 内蔵のオーディオインターフェースを使用する
   p
     | 最も一般的なのは、PCに内蔵されているマイクやマイク端子とヘッドフォン端子を使用する方法でしょう。
-  img.img-responsive.img-thumbnail(src="/images/audio-io1.png",alt="オーディオ入出力端子")
+  img.img-responsive.img-thumbnail(src="/audio-io1.png",alt="オーディオ入出力端子")
   .visible-windows-block
     ol.explain
       li
@@ -22,11 +22,11 @@ block container
       li
         | NINJAMクライアントを起動し、「Options（設定）」>「Audio configuration...（オーディオ設定）」を選択します。
         br
-        img.img-responsive.img-thumbnail(src="/images/audio-io3.png",alt="Audio configuration...")
+        img.img-responsive.img-thumbnail(src="/audio-io3.png",alt="Audio configuration...")
       li
         | 「Input/output system（ドライバ設定）」で「Kernel Streaming」を選択します。
         br
-        img.img-responsive.img-thumbnail(src="/images/audio-io5.png",alt="Kernel Streaming")
+        img.img-responsive.img-thumbnail(src="/audio-io5.png",alt="Kernel Streaming")
   .visible-macintosh-block.alert.alert-danger
     | Macintosh向け公式NINJAMクライアントは、最新のIntel Mac上では実行できません。
     span.fa.fa-question-circle.fa-fw.text-primary(data-toggle="tooltip",data-placement="right",title="Macintosh向け公式NINJAMクライアントはPowerPCアプリケーションのため、最新のIntel Mac上で実行する方法はありません。「導入する」>「その他のクライアント」より、Intel Macに対応したNINJAMクライアントを入手してください。")
@@ -40,7 +40,7 @@ block container
       | 外付けのオーディオインターフェース
       span.fa.fa-external-link.fa-fw
     | を使用すると、非常に高音質で安定したオーディオ入出力環境を構築できます。（推奨）
-  img.img-responsive.img-thumbnail(src="/images/audio-io2.png",alt="オーディオインターフェース")
+  img.img-responsive.img-thumbnail(src="/audio-io2.png",alt="オーディオインターフェース")
   .visible-windows-block
     ol.explain
       li
@@ -54,11 +54,11 @@ block container
       li
         | NINJAMクライアントを起動し、「Options（設定）」>「Audio configuration...（オーディオ設定）」を選択します。
         br
-        img.img-responsive.img-thumbnail(src="/images/audio-io3.png",alt="Audio configuration...")
+        img.img-responsive.img-thumbnail(src="/audio-io3.png",alt="Audio configuration...")
       li
         | 「Input/output system（ドライバ設定）」で「ASIO」を選択します。
         br
-        img.img-responsive.img-thumbnail(src="/images/audio-io4.png",alt="ASIO")
+        img.img-responsive.img-thumbnail(src="/audio-io4.png",alt="ASIO")
         p.text-muted
           | NINJAMでASIOを使用するには、ninjam.exeと同じディレクトリにnjasiodrv.dllが設置されていることが必要です。njasiodrv.dllが見当たらない場合は、
           a(href="/install") こちら
