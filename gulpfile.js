@@ -91,7 +91,7 @@ gulp.task('deploy', ['compress:dist', 'others'], function(){
         password: config.password,
     });
 
-    return gulp.src(['./dist/**'], {buffer: false})
+    return gulp.src(['./dist/**','./dist/.*'], {buffer: false})
         .pipe(conn.dest(config.upload_path));
 });
 
