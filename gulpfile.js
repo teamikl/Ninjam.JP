@@ -47,9 +47,12 @@ gulp.task('coffee', function(){
 gulp.task('compile:all', ['jade', 'less', 'coffee']);
 
 
-//その他のファイル
+// その他のファイル
 gulp.task('others', function(){
-    return gulp.src(['src/images/*.png', 'src/.htaccess', 'src/robots.txt', 'src/sitemap.xml'])
+    return gulp.src(
+        ['src/others/*', 'src/others/.*', 'src/others/img/*'],
+        { base: 'src/others' }
+    )
         .pipe(gulp.dest(DIST_DIR));
 });
 
@@ -72,7 +75,7 @@ gulp.task('clean:dist', function(callback){
 
 // ファイルを公開
 // 依存: build
-gulp.task('deploy', ['compress:dist'], function(){
+gulp.task('deploy', ['compress:dist', 'others'], function(){
     var pit = require('pit-ro');
 
     // 設定ファイルを記述する(Pitで管理)
@@ -97,7 +100,6 @@ gulp.task('watch', function(){
     gulp.watch('src/jade/*.jade', ['jade']);
     gulp.watch('src/less/*.less', ['less']);
     gulp.watch('src/coffee/*.coffee', ['coffee']);
-    gulp.watch('src/images/*.png', 'src/.htaccess', 'src/robots.txt', 'src/sitemap.xml', ['others']);
 });
 
 
