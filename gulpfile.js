@@ -50,7 +50,7 @@ gulp.task('compile:all', ['jade', 'less', 'coffee']);
 // その他のファイル
 gulp.task('others', function(){
     return gulp.src(
-        ['src/others/*', 'src/others/.*', 'src/others/img/*'],
+        ['src/others/*', 'src/others/.htaccess', 'src/others/img/*'],
         { base: 'src/others' }
     )
         .pipe(gulp.dest(DIST_DIR));
@@ -91,7 +91,7 @@ gulp.task('deploy', ['compress:dist', 'others'], function(){
         password: config.password,
     });
 
-    return gulp.src(['./dist/**','./dist/.*'], {buffer: false})
+    return gulp.src(['./dist/**','./dist/.htaccess'], {buffer: false})
         .pipe(conn.dest(config.upload_path));
 });
 
