@@ -83,8 +83,6 @@ gulp.task('deploy', ['compress:dist', 'others'], function(){
     pit.pitDir = '/home/leo/Dropbox/web/www.ninjam.jp/.pit';
     var config = pit.get('ftp.ninjam.jp', 'config');
 
-    // 以下のコードは未テスト
-
     var conn = ftp.create({
         host: config.host,
         user: config.user,
