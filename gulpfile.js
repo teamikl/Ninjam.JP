@@ -22,7 +22,7 @@ gulp.task('jade', function(){
     return gulp.src(['src/jade/*.jade'])
         .pipe(plumber())
         .pipe(jade())
-        .pipe(gulp.dest(DIST_DIR))
+        .pipe(gulp.dest(DIST_DIR));
 });
 
 
