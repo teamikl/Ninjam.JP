@@ -11,7 +11,8 @@ var gulp = require('gulp'),
     ftp = require('vinyl-ftp'),
     rimraf = require('rimraf'),
     uglify = require('gulp-uglify'),
-    cssmin = require('gulp-cssmin');
+    cssmin = require('gulp-cssmin'),
+    browsersync = require('browser-sync');
 
 var DIST_DIR = "./dist/";
 
@@ -21,7 +22,7 @@ gulp.task('jade', function(){
     return gulp.src(['src/jade/*.jade'])
         .pipe(plumber())
         .pipe(jade())
-        .pipe(gulp.dest(DIST_DIR));
+        .pipe(gulp.dest(DIST_DIR))
 });
 
 
@@ -73,6 +74,22 @@ gulp.task('clean:dist', function(callback){
 });
 
 
+// browsersync
+gulp.task('browser-sync', function(){
+    browsersync({
+        server: {
+            baseDir: "./dist/"
+        }
+    });
+});
+
+
+  //ブラウザをリロード
+  gulp.task('browser-reload', function(){
+        browsersync.reload();
+  });
+
+
 // ファイルを公開
 // 依存: build
 gulp.task('deploy', ['compress:dist', 'others'], function(){
@@ -96,10 +113,13 @@ gulp.task('deploy', ['compress:dist', 'others'], function(){
 // ファイル監視
 gulp.task('watch', function(){
     gulp.watch('src/jade/*.jade', ['jade']);
+    gulp.watch('src/jade/components/*.jade', ['jade']);
     gulp.watch('src/less/*.less', ['less']);
+    gulp.watch('src/less/components/*.less', ['less']);
     gulp.watch('src/coffee/*.coffee', ['coffee']);
+    gulp.watch('dist/**', ['browser-reload']);
 });
 
 
 // デフォルトで実行されるタスク
-gulp.task('default', ['jade', 'less', 'coffee', 'watch']);
+gulp.task('default', ['jade', 'less', 'coffee', 'watch', 'browser-sync']);
