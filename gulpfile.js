@@ -12,7 +12,7 @@ var gulp = require('gulp'),
     rimraf = require('rimraf'),
     uglify = require('gulp-uglify'),
     cssmin = require('gulp-cssmin'),
-    browsersync = require('browser-sync');
+    browsersync = require('browser-sync').create();
 
 var DIST_DIR = "./dist/";
 
@@ -76,18 +76,15 @@ gulp.task('clean:dist', function(callback){
 
 // browsersync
 gulp.task('browser-sync', function(){
-    browsersync({
+    browsersync.init({
+        open: false,
+        reloadDelay: 2000,
+        files: ['./dist/*.(html|css|js)'],
         server: {
             baseDir: "./dist/"
         }
     });
 });
-
-
-  //ブラウザをリロード
-  gulp.task('browser-reload', function(){
-        browsersync.reload();
-  });
 
 
 // ファイルを公開
@@ -112,12 +109,9 @@ gulp.task('deploy', ['compress:dist', 'others'], function(){
 
 // ファイル監視
 gulp.task('watch', function(){
-    gulp.watch('src/jade/*.jade', ['jade']);
-    gulp.watch('src/jade/components/*.jade', ['jade']);
-    gulp.watch('src/less/*.less', ['less']);
-    gulp.watch('src/less/components/*.less', ['less']);
+    gulp.watch('src/jade/**/*.jade', ['jade']);
+    gulp.watch('src/less/**/*.less', ['less']);
     gulp.watch('src/coffee/*.coffee', ['coffee']);
-    gulp.watch('dist/**', ['browser-reload']);
 });
 
 
